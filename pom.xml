@@ -56,6 +56,8 @@
                         <id>check</id>
                         <goals>
                             <goal>check</goal>
+                            <goal>report</goal>
+                            <goal>report-aggregate</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -66,7 +68,7 @@
                                     <limit>
                                         <counter>BRANCH</counter>
                                         <value>COVEREDRATIO</value>
-                                        <minimum>75%</minimum>
+                                        <minimum>100%</minimum>
                                     </limit>
                                 </limits>
                             </rule>
@@ -76,3 +78,4 @@
         </plugins>
     </build>
 </project>
+

@@ -38,6 +38,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
                 <executions>
+                         
                     <execution>
                         <id>prepare-agent</id>
                         <phase>initialize</phase>
@@ -52,6 +53,28 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
+                         
+                         <execution>
+                           <id>check</id>
+                           <goals>
+                           <goal>check</goal>
+                           </goals>
+                           </execution>
+                           </executions>
+                           <configuration>
+                           <rules>
+                           <rule>
+                           <limits>
+                           <limit>
+                                    <counter>BRANCH</counter>
+                                    <value>COVEREDRATIO</value>
+                                    <minimum>100%</minimum>
+                           </limit>
+                           </limits>
+                           </rule>
+                           </rules>
+                           </configuration>
+                     </execution>
                 </executions>
             </plugin>
         </plugins>
